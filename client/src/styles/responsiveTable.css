@@ -1,0 +1,118 @@
+/* Responsive Tables */
+@media (max-width: 768px) {
+  /* General table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Hide table headers on mobile */
+  table thead {
+    display: none;
+  }
+  
+  /* Make rows behave like cards */
+  table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+  }
+  
+  /* Make cells full width and styled like rows */
+  table tbody td {
+    display: block;
+    text-align: right;
+    padding: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  table tbody td:last-child {
+    border-bottom: none;
+  }
+  
+  /* Add labels for each cell */
+  table tbody td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Food entries table styling */
+  .food-entries-table tbody td:nth-child(1):before { content: "Food"; }
+  .food-entries-table tbody td:nth-child(2):before { content: "Quantity"; }
+  .food-entries-table tbody td:nth-child(3):before { content: "Calories"; }
+  .food-entries-table tbody td:nth-child(4):before { content: "Carbs"; }
+  .food-entries-table tbody td:nth-child(5):before { content: "Fat"; }
+  .food-entries-table tbody td:nth-child(6):before { content: "Protein"; }
+  .food-entries-table tbody td:nth-child(7):before { content: "Actions"; }
+  
+  /* Foods list table styling */
+  .foods-table tbody td:nth-child(1):before { content: "Name"; }
+  .foods-table tbody td:nth-child(2):before { content: "Calories"; }
+  .foods-table tbody td:nth-child(3):before { content: "Carbs"; }
+  .foods-table tbody td:nth-child(4):before { content: "Fat"; }
+  .foods-table tbody td:nth-child(5):before { content: "Protein"; }
+  .foods-table tbody td:nth-child(6):before { content: "Serving Size"; }
+  .foods-table tbody td:nth-child(7):before { content: "Actions"; }
+  
+  /* Dashboard entries table */
+  .entries-list table tbody td:nth-child(1):before { content: "Food"; }
+  .entries-list table tbody td:nth-child(2):before { content: "Quantity"; }
+  .entries-list table tbody td:nth-child(3):before { content: "Calories"; }
+  .entries-list table tbody td:nth-child(4):before { content: "Macros"; }
+  
+  /* Style for footers (totals) */
+  table tfoot {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  table tfoot tr {
+    display: block;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  table tfoot th {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Adjustments for buttons in tables */
+  .actions-cell {
+    display: flex !important;
+    justify-content: flex-end;
+    padding-left: 0.5rem !important;
+  }
+  
+  .actions-cell:before {
+    display: none;
+  }
+  
+  .actions-cell .btn {
+    margin-left: 0.5rem;
+  }
+  
+  /* Fix for quantity input */
+  .quantity-input {
+    width: 60px !important;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  
+  /* Macro pills should stack on mobile */
+  .macro-pill {
+    display: block;
+    margin: 0.25rem 0;
+  }
+}

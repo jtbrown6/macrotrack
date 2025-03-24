@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  calorie-calc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calorie-calc
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3003
+    networks:
+      - calorie-network
+
+networks:
+  calorie-network:
+    driver: bridge

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "52268217-fe6f-4a23-9ed5-c436c1965ba9",
+    "date": "2025-03-24",
+    "entries": [
+      {
+        "id": "2d48202b-da66-4de9-a3ab-10f316b9800b",
+        "foodId": "f1e6c15e-8a0c-4d6f-9f4a-927b6b1d1e7a",
+        "quantity": 11,
+        "date": "2025-03-24"
+      },
+      {
+        "id": "851b95ce-9fa2-497d-8379-1cbebcbd3f73",
+        "foodId": "573c86b0-561b-40db-811a-798926cb77d7",
+        "quantity": 1,
+        "date": "2025-03-24"
+      },
+      {
+        "id": "96381aa5-cf7b-494e-835a-13cc4592f0bf",
+        "foodId": "a2b8c7d6-5e4f-3g2h-1i0j-9k8l7m6n5o4p",
+        "quantity": 150,
+        "date": "2025-03-24"
+      }
+    ]
+  },
+  {
+    "id": "32222ea9-a726-4be2-98d1-7b6e44e3303b",
+    "date": "2025-03-25",
+    "entries": [
+      {
+        "id": "c69c6658-384c-438d-aa09-6a786b698955",
+        "foodId": "a2b8c7d6-5e4f-3g2h-1i0j-9k8l7m6n5o4p",
+        "quantity": 150,
+        "date": "2025-03-25"
+      }
+    ]
+  }
+]

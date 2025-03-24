@@ -1,0 +1,101 @@
+/* Nutrition Summary Table Styles */
+.nutrition-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nutrition-summary-table th,
+.nutrition-summary-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nutrition-summary-table thead th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  color: #333;
+}
+
+.nutrition-summary-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.nutrition-summary-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Color coding for nutrient rows */
+.calories-row td:first-child strong {
+  color: #444;
+}
+
+.carbs-row td:first-child .carbs {
+  color: #3D7A8C; /* Blue-teal */
+}
+
+.fat-row td:first-child .fat {
+  color: #CA7649; /* Rust */
+}
+
+.protein-row td:first-child .protein {
+  color: #5B7553; /* Sage green */
+}
+
+/* Progress bar in the table */
+.progress-inline {
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #5a6268;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.carbs-fill {
+  background-color: #3D7A8C; /* Blue-teal */
+}
+
+.fat-fill {
+  background-color: #CA7649; /* Rust */
+}
+
+.protein-fill {
+  background-color: #5B7553; /* Sage green */
+}
+
+.progress-text {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #666;
+  text-align: right;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .nutrition-summary-table th,
+  .nutrition-summary-table td {
+    padding: 8px 10px;
+  }
+  
+  .nutrition-summary-table th:nth-child(3),
+  .nutrition-summary-table td:nth-child(3) {
+    display: none; /* Hide target column on mobile */
+  }
+}

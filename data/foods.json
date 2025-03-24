@@ -1,0 +1,22 @@
+[
+  {
+    "id": "f1e6c15e-8a0c-4d6f-9f4a-927b6b1d1e7a",
+    "name": "Cooked Chicken",
+    "calories": 200,
+    "carbs": 0,
+    "fat": 1.7,
+    "protein": 43.3,
+    "unit": "oz",
+    "servingSize": 5
+  },
+  {
+    "id": "a2b8c7d6-5e4f-3g2h-1i0j-9k8l7m6n5o4p",
+    "name": "White Rice (Cooked)",
+    "calories": 256,
+    "carbs": 56,
+    "fat": 0,
+    "protein": 5,
+    "unit": "g",
+    "servingSize": 150
+  }
+]

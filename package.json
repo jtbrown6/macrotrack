@@ -1,0 +1,32 @@
+{
+  "name": "calorie-calc",
+  "version": "1.0.0",
+  "description": "Personal calorie and macro nutrient tracker application",
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev:client": "cd client && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "build": "npm run build:server && npm run build:client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build -t calorie-calc .",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose down"
+  },
+  "keywords": [
+    "calorie",
+    "macro",
+    "nutrition",
+    "tracker",
+    "react",
+    "express",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

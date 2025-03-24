@@ -1,0 +1,111 @@
+/* Styles for the daily food entry component */
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.quantity-input {
+  width: 70px;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-right: 8px;
+  text-align: right;
+}
+
+.unit-label {
+  display: inline-block;
+  min-width: 20px;
+  color: #666;
+}
+
+.selected-food-preview {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.selected-food-preview h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #3D7A8C;
+}
+
+.nutrition-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nutrition-preview div {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  font-weight: 500;
+}
+
+/* Improve delete button visual cue */
+.btn-sm.btn-danger {
+  background-color: white;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  transition: all 0.2s ease;
+}
+
+.btn-sm.btn-danger:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Add food entry button improvements */
+.add-food-btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Add data-label attributes for responsive design */
+@media (max-width: 768px) {
+  .food-entries-table td.actions-cell::before {
+    content: "Actions";
+    position: absolute;
+    left: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+/* Food entries table */
+.food-entries-table {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.food-entries-table th, 
+.food-entries-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.food-entries-table thead th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.food-entries-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Empty state styling */
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  color: #666;
+}
