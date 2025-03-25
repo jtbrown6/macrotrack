@@ -23,8 +23,10 @@ The project consists of two main parts:
 
 ### Prerequisites
 
-- Node.js 16+ and npm
-- Docker and Docker Compose (for containerized deployment)
+- For development:
+  - Node.js 16+ and npm
+- For Docker deployment:
+  - Docker and Docker Compose (no Node.js or npm required on the host)
 
 ### Development Setup
 
@@ -55,40 +57,76 @@ The project consists of two main parts:
 
 ### Docker Deployment
 
-1. Build the Docker image:
+1. Build the Docker image and start the container:
    ```
-   npm run docker:build
+   docker-compose build
+   docker-compose up -d
+   ```
+   This will build the image and start the container on port 3003.
+
+2. Check container status:
+   ```
+   docker-compose ps
    ```
 
-2. Start the container:
+3. View container logs:
    ```
-   npm run docker:start
+   docker-compose logs -f
    ```
-   This will start the container on port 3003.
 
-3. Stop the container:
+4. Stop the container:
    ```
-   npm run docker:stop
+   docker-compose down
    ```
+
+Note: These commands can be run on a Docker host without npm installed.
 
 ## Custom Docker Configuration
 
-To deploy on your Docker host at 192.168.1.214, update the `docker-compose.yml` file:
+To deploy on your Docker host (e.g., at 192.168.1.214):
+
+1. Clone this repository on your Docker host:
+   ```
+   git clone <repository-url>
+   cd macrotrack
+   ```
+
+2. No need to install npm or Node.js on the Docker host - Docker will handle all dependencies.
+
+3. Start the application using Docker Compose:
+   ```
+   docker-compose up -d
+   ```
+
+4. Access the application at http://192.168.1.214:3003 (replace with your Docker host's IP address).
+
+The `docker-compose.yml` file already contains the necessary configuration:
 
 ```yaml
 version: '3.8'
 
 services:
   calorie-calc:
-    # ... other settings
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calorie-calc
+    restart: unless-stopped
     ports:
       - "3003:3003"
-    # ... other settings
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3003
+      - DEBUG=app:*
     networks:
       - calorie-network
-```
 
-You can access the application at http://192.168.1.214:3003 after starting the container.
+networks:
+  calorie-network:
+    driver: bridge
+```
 
 ## Data Persistence
 
