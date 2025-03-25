@@ -2,7 +2,11 @@ import axios from 'axios';
 import { Food, DailyLog, Settings, FoodEntry } from '../types';
 
 // Configure axios with base URL
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3003/api';
+// In Docker, we need to use the window.location.origin to get the correct host
+const API_BASE_URL = process.env.REACT_APP_API_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? `${window.location.origin}/api` 
+    : 'http://localhost:3003/api');
 
 const api = axios.create({
   baseURL: API_BASE_URL,
